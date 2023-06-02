@@ -6,3 +6,5 @@
 4) yarn add express
 5) tsc --init
 6) yarn add dotenv
+7) yarn add ts-node-dev --dev
+8) npm i --save-dev @types/cors
