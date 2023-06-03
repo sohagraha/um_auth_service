@@ -1,16 +1,18 @@
 import mongoose from 'mongoose'
 import app from './app'
 import config from './config'
+import { logger, errorLogger } from './shared/logger'
 
 async function connect() {
   try {
     await mongoose.connect(config.DATABASE_URL as string)
-    console.log('Connect successfully!!!')
+    logger.info('Connected to database')
     app.listen(config.PORT, () => {
-      console.log(`Application start on : ${config.PORT}`)
+      logger.info(`Server is running on port ${config.PORT}`)
     })
-  } catch (error) {
-    console.log('Connect failure!!!')
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (error: any) {
+    errorLogger.error(`Error connecting to database: ${error.message}`)
   }
 }
 

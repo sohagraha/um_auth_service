@@ -1,0 +1,40 @@
+{"level":"info","message":"Connected to database"}
+{"level":"info","message":"Server is running on port 5000"}
+{"level":"info","message":"Connected to database"}
+{"level":"info","message":"Server is running on port 5000"}
+{"level":"info","message":"Connected to database"}
+{"level":"info","message":"Server is running on port 5000"}
+{"level":"info","message":"Connected to database"}
+{"level":"info","message":"Server is running on port 5000"}
+{"level":"info","message":"Connected to database"}
+{"level":"info","message":"Server is running on port 5000"}
+{"level":"info","message":"Connected to database"}
+{"level":"info","message":"Server is running on port 5000"}
+{"level":"info","message":"Connected to database"}
+{"level":"info","message":"Server is running on port 5000"}
+2023-06-03T15:01:07.501Z [right meow!] info: Connected to database
+2023-06-03T15:01:07.512Z [right meow!] info: Server is running on port 5000
+2023-06-03T15:02:23.631Z [right meow!] info: Connected to database
+2023-06-03T15:02:23.640Z [right meow!] info: Server is running on port 5000
+2023-06-03T15:03:43.811Z [sr] info: Connected to database
+2023-06-03T15:03:43.889Z [sr] info: Server is running on port 5000
+6/3/2023, 9:04:34 PM 9:04:34 PM [sr] info: Connected to database
+6/3/2023, 9:04:34 PM 9:04:34 PM [sr] info: Server is running on port 5000
+6/3/2023, 9:08:19 PM  [sr] info: Connected to database
+6/3/2023, 9:08:19 PM  [sr] info: Server is running on port 5000
+6/3/2023, 9:08:34 PM  [sr] info: Connected to database
+6/3/2023, 9:08:34 PM  [sr] info: Server is running on port 5000
+6/3/2023, 9:08:59 PM [sr] info: Connected to database
+6/3/2023, 9:08:59 PM [sr] info: Server is running on port 5000
+{
+  message: 'Connected to database',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-03T15:09:55.989Z'
+}
+{
+  message: 'Server is running on port 5000',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-03T15:09:56.041Z'
+}

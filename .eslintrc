@@ -15,7 +15,7 @@
 
   "rules": {
     "no-console": "error",
-    "no-undef": "error",
+    "no-undef": "warn",
     "no-unused-expressions": "error",
     "no-unreachable": "error",
     "@typescript-eslint/no-unused-vars": "error",
