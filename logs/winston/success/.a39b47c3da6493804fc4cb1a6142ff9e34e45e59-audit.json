@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\success\\.a39b47c3da6493804fc4cb1a6142ff9e34e45e59-audit.json",
+    "files": [
+        {
+            "date": 1685806016875,
+            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\success\\UM-2023-06-03-21-success.log",
+            "hash": "f106f84816821cbe896a22d683d61bbb0ba61328e7a8c13c0c473f2374a8507f"
+        }
+    ],
+    "hashType": "sha256"
+}

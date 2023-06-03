@@ -1,5 +1,6 @@
 import { createLogger, format, transports } from 'winston'
 const { combine, timestamp, label, printf, prettyPrint } = format
+import DailyRotateFile from 'winston-daily-rotate-file'
 import path from 'path'
 
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -12,21 +13,41 @@ const logger = createLogger({
   format: combine(label({ label: 'sr' }), timestamp(), myFormat, prettyPrint()),
   transports: [
     new transports.Console(),
-    new transports.File({
-      // eslint-disable-next-line no-undef
-      filename: path.join(process.cwd(), 'logs', 'winston', 'succeess.log'),
+    new DailyRotateFile({
+      filename: path.join(
+        // eslint-disable-next-line no-undef
+        process.cwd(),
+        'logs',
+        'winston',
+        'success',
+        'UM-%DATE%-success.log'
+      ),
+      datePattern: 'YYYY-MM-DD-HH',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '14d',
     }),
   ],
 })
 
 const errorLogger = createLogger({
   level: 'error',
-  format: combine(label({ label: 'sr' }), timestamp(), myFormat),
+  format: combine(label({ label: 'sr' }), timestamp(), myFormat, prettyPrint()),
   transports: [
     new transports.Console(),
-    new transports.File({
-      // eslint-disable-next-line no-undef
-      filename: path.join(process.cwd(), 'logs', 'winston', 'error.log'),
+    new DailyRotateFile({
+      filename: path.join(
+        // eslint-disable-next-line no-undef
+        process.cwd(),
+        'logs',
+        'winston',
+        'errors',
+        'UM-%DATE%-error.log'
+      ),
+      datePattern: 'YYYY-MM-DD-HH',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '14d',
     }),
   ],
 })
