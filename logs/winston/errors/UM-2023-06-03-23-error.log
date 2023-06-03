@@ -1,0 +1,6 @@
+{
+  message: 'Error connecting to database: Server selection timed out after 30000 ms',
+  level: 'error',
+  label: 'sr',
+  timestamp: '2023-06-03T17:27:34.356Z'
+}
