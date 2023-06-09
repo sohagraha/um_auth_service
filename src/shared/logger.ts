@@ -19,7 +19,7 @@ const logger = createLogger({
         process.cwd(),
         'logs',
         'winston',
-        'success',
+        'success', // folder name
         'UM-%DATE%-success.log'
       ),
       datePattern: 'YYYY-MM-DD-HH',
@@ -41,7 +41,7 @@ const errorLogger = createLogger({
         process.cwd(),
         'logs',
         'winston',
-        'errors',
+        'errors', // folder name
         'UM-%DATE%-error.log'
       ),
       datePattern: 'YYYY-MM-DD-HH',
