@@ -1,6 +1,6 @@
 {
-  message: 'Unhandle Exception: Error: Something went wrong',
+  message: 'Unhandle Rejection: Error: Something went wrong',
   level: 'error',
   label: 'sr',
-  timestamp: '2023-06-09T18:11:47.639Z'
+  timestamp: '2023-06-09T18:29:53.989Z'
 }

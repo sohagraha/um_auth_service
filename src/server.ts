@@ -1,11 +1,17 @@
+import { Server } from 'http'
 import mongoose from 'mongoose'
 import app from './app'
 import config from './config'
-import { logger, errorLogger } from './shared/logger'
-import { Server } from 'http'
+import { errorLogger, logger } from './shared/logger'
 
+// Uncaught Exception
+process.on('uncaughtException', error => {
+  errorLogger.error(`Uncaught Exception: ${error}`)
+  process.exit(1)
+})
+
+let server: Server
 async function connect() {
-  let server: Server
   try {
     await mongoose.connect(config.DATABASE_URL as string)
     logger.info('Connected to database')
@@ -19,10 +25,9 @@ async function connect() {
 
   process.on('unhandledRejection', error => {
     // errorLogger.error(`Uncaught Exception: ${error.message}`)
-    console.log('error......................')
     if (server) {
       server.close(() => {
-        errorLogger.error(`Unhandle Exception: ${error}`)
+        errorLogger.error(`Unhandle Rejection: ${error}`)
         process.exit(1)
       })
     } else {
@@ -32,3 +37,10 @@ async function connect() {
 }
 
 connect()
+
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM received')
+  if (server) {
+    server.close()
+  }
+})
