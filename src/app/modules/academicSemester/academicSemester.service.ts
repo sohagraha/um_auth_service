@@ -1,8 +1,11 @@
+import status from 'http-status';
 import ApiError from '../../../errors/ApiError';
+import { paginationHelper } from '../../../helper/paginationHelper';
+import { IGenericResponse } from '../../../interfaces/common';
+import { IPaginationOptions } from '../../../interfaces/pagination';
 import { academicSemesterTitlesAndCodesMapper } from './academicSemester.constant';
 import { IAcademicSemester } from './academicSemester.interface';
 import { AcademicSemester } from './academicSemester.model';
-import status from 'http-status';
 
 const createAcademicSemester = async (
   payload: IAcademicSemester
@@ -17,6 +20,28 @@ const createAcademicSemester = async (
   return result;
 };
 
+const getAllAcademicSemesters = async (
+  paginationOptions: IPaginationOptions
+): Promise<IGenericResponse<IAcademicSemester[]>> => {
+  const { page, limit, skip, sort } =
+    paginationHelper.calculatePagination(paginationOptions);
+  const result = await AcademicSemester.find()
+    .sort(sort)
+    .skip(skip)
+    .limit(limit);
+
+  const total = await AcademicSemester.countDocuments();
+  return {
+    meta: {
+      page,
+      limit,
+      total,
+    },
+    data: result,
+  };
+};
+
 export const AcademicSemesterService = {
   createAcademicSemester,
+  getAllAcademicSemesters,
 };
