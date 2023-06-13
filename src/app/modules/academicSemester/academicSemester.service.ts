@@ -55,9 +55,9 @@ const getAllAcademicSemesters = async (
   const { page, limit, skip, sort } =
     paginationHelper.calculatePagination(paginationOptions);
 
-  const result = await AcademicSemester.find({
-    $and: andCondition,
-  })
+  const whereCondition = andCondition.length ? { $and: andCondition } : {};
+
+  const result = await AcademicSemester.find(whereCondition)
     .sort(sort)
     .skip(skip)
     .limit(limit);
