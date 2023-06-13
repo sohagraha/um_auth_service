@@ -3,8 +3,14 @@ import ApiError from '../../../errors/ApiError';
 import { paginationHelper } from '../../../helper/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
-import { academicSemesterTitlesAndCodesMapper } from './academicSemester.constant';
-import { IAcademicSemester } from './academicSemester.interface';
+import {
+  academicSemesterSearchableFields,
+  academicSemesterTitlesAndCodesMapper,
+} from './academicSemester.constant';
+import {
+  IAcademicSemester,
+  IAcademicSemesterFilter,
+} from './academicSemester.interface';
 import { AcademicSemester } from './academicSemester.model';
 
 const createAcademicSemester = async (
@@ -21,11 +27,37 @@ const createAcademicSemester = async (
 };
 
 const getAllAcademicSemesters = async (
+  filters: IAcademicSemesterFilter,
   paginationOptions: IPaginationOptions
 ): Promise<IGenericResponse<IAcademicSemester[]>> => {
+  const { searchTerm, ...filtersData } = filters;
+
+  const andCondition = [];
+
+  // search by searchTerm
+  if (searchTerm) {
+    andCondition.push({
+      $or: academicSemesterSearchableFields.map(field => ({
+        [field]: { $regex: searchTerm, $options: 'i' },
+      })),
+    });
+  }
+
+  // filter by other fields
+  if (Object.keys(filtersData).length) {
+    andCondition.push({
+      $and: Object?.entries(filtersData).map(([key, value]) => ({
+        [key]: value,
+      })),
+    });
+  }
+
   const { page, limit, skip, sort } =
     paginationHelper.calculatePagination(paginationOptions);
-  const result = await AcademicSemester.find()
+
+  const result = await AcademicSemester.find({
+    $and: andCondition,
+  })
     .sort(sort)
     .skip(skip)
     .limit(limit);

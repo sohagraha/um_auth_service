@@ -99,6 +99,16 @@
             "date": 1686502802741,
             "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-11-23-error.log",
             "hash": "45c662c1f4b9f4e127127f0bdbcc15cab6dbf751f947d9a3bb94a726a4f2d234"
+        },
+        {
+            "date": 1686506479852,
+            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-12-00-error.log",
+            "hash": "19075bccdc9c7e8240ea837cfbdd3ecc41bf99dd0b5db958a6b051bfad47b7b6"
+        },
+        {
+            "date": 1686676646587,
+            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-13-23-error.log",
+            "hash": "2a3ab4da99f09321b362371f8273c625106a3c1533c30785d57fbd85ce4e1060"
         }
     ],
     "hashType": "sha256"
