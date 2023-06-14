@@ -8,6 +8,7 @@ import handleValidationError from '../../errors/handleValidationError';
 import handleZodError from '../../errors/handleZodError';
 import IGenericErrorMessage from '../../interfaces/error';
 import { errorLogger } from '../../shared/logger';
+import handleCastError from '../../errors/handleCastError';
 
 const globalErrorHandler: ErrorRequestHandler = (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -55,6 +56,11 @@ const globalErrorHandler: ErrorRequestHandler = (
           },
         ]
       : [];
+  } else if (error?.name === 'CastError') {
+    const simplifiedError = handleCastError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
   }
 
   res.status(statusCode).json({

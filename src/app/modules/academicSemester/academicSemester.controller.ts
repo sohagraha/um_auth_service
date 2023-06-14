@@ -44,7 +44,41 @@ const getAllAcademicSemesters: RequestHandler = catchAsync(
   }
 );
 
+const getAcademicSemesterById: RequestHandler = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
+    const result = await AcademicSemesterService.getAcademicSemesterById(id);
+    sendResponse<IAcademicSemester>(res, {
+      success: true,
+      data: result,
+      statusCode: httpStatus.OK,
+      message: 'Academic Semester Retrieved successfully',
+    });
+    next();
+  }
+);
+
+const updateAcademicSemesterById: RequestHandler = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
+    const { ...academicSemesterData } = req.body;
+    const result = await AcademicSemesterService.updateAcademicSemesterById(
+      id,
+      academicSemesterData
+    );
+    sendResponse<IAcademicSemester>(res, {
+      success: true,
+      data: result,
+      statusCode: httpStatus.OK,
+      message: 'Academic Semester Updated successfully',
+    });
+    next();
+  }
+);
+
 export const AcademicSemesterController = {
   createAcademicSemester,
   getAllAcademicSemesters,
+  getAcademicSemesterById,
+  updateAcademicSemesterById,
 };

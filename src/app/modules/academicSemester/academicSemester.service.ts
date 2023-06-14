@@ -73,7 +73,32 @@ const getAllAcademicSemesters = async (
   };
 };
 
+const getAcademicSemesterById = async (
+  id: string
+): Promise<IAcademicSemester> => {
+  const result = await AcademicSemester.findById(id);
+  if (!result) {
+    throw new ApiError(status.NOT_FOUND, 'Academic Semester not found');
+  }
+  return result;
+};
+
+const updateAcademicSemesterById = async (
+  id: string,
+  updateBody: Partial<IAcademicSemester>
+): Promise<IAcademicSemester> => {
+  const result = await AcademicSemester.findByIdAndUpdate(id, updateBody, {
+    new: true,
+  });
+  if (!result) {
+    throw new ApiError(status.NOT_FOUND, 'Academic Semester not found');
+  }
+  return result;
+};
+
 export const AcademicSemesterService = {
   createAcademicSemester,
   getAllAcademicSemesters,
+  getAcademicSemesterById,
+  updateAcademicSemesterById,
 };
