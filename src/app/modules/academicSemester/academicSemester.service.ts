@@ -1,6 +1,5 @@
 import status from 'http-status';
 import ApiError from '../../../errors/ApiError';
-import { paginationHelper } from '../../../helper/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import {
@@ -12,6 +11,7 @@ import {
   IAcademicSemesterFilter,
 } from './academicSemester.interface';
 import { AcademicSemester } from './academicSemester.model';
+import { paginationHelpers } from '../../../helper/paginationHelper';
 
 const createAcademicSemester = async (
   payload: IAcademicSemester
@@ -52,13 +52,13 @@ const getAllAcademicSemesters = async (
     });
   }
 
-  const { page, limit, skip, sort } =
-    paginationHelper.calculatePagination(paginationOptions);
+  const { page, limit, skip, sortBy } =
+    paginationHelpers.calculatePagination(paginationOptions);
 
   const whereCondition = andCondition.length ? { $and: andCondition } : {};
 
   const result = await AcademicSemester.find(whereCondition)
-    .sort(sort)
+    .sort(sortBy)
     .skip(skip)
     .limit(limit);
 
@@ -110,9 +110,20 @@ const updateAcademicSemesterById = async (
   return result;
 };
 
+const deleteAcademicSemesterById = async (
+  id: string
+): Promise<IAcademicSemester> => {
+  const result = await AcademicSemester.findByIdAndDelete(id);
+  if (!result) {
+    throw new ApiError(status.NOT_FOUND, 'Academic Semester not found');
+  }
+  return result;
+};
+
 export const AcademicSemesterService = {
   createAcademicSemester,
   getAllAcademicSemesters,
   getAcademicSemesterById,
   updateAcademicSemesterById,
+  deleteAcademicSemesterById,
 };

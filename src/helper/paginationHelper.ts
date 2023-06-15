@@ -1,40 +1,37 @@
 import { SortOrder } from 'mongoose';
 
-type IPaginationOptions = {
+type IOptions = {
   page?: number;
   limit?: number;
   sortBy?: string;
   sortOrder?: SortOrder;
 };
 
-type IOptionResult = {
+type IOptionsResult = {
   page: number;
   limit: number;
   skip: number;
-  sort?: {
-    [key: string]: SortOrder;
-  };
+  sortBy: string;
+  sortOrder: SortOrder;
 };
 
-const calculatePagination = (options: IPaginationOptions): IOptionResult => {
-  const {
-    page = 1,
-    limit = 10,
-    sortBy = 'createdAt',
-    sortOrder = 'desc',
-  } = options;
+const calculatePagination = (options: IOptions): IOptionsResult => {
+  const page = Number(options.page || 1);
+  const limit = Number(options.limit || 10);
   const skip = (page - 1) * limit;
-  const sort = {
-    [sortBy]: sortOrder,
-  };
+
+  const sortBy = options.sortBy || 'createdAt';
+  const sortOrder = options.sortOrder || 'desc';
+
   return {
     page,
     limit,
     skip,
-    sort,
+    sortBy,
+    sortOrder,
   };
 };
 
-export const paginationHelper = {
+export const paginationHelpers = {
   calculatePagination,
 };
