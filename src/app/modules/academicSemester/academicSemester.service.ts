@@ -87,9 +87,23 @@ const updateAcademicSemesterById = async (
   id: string,
   updateBody: Partial<IAcademicSemester>
 ): Promise<IAcademicSemester> => {
-  const result = await AcademicSemester.findByIdAndUpdate(id, updateBody, {
-    new: true,
-  });
+  if (
+    updateBody.title &&
+    updateBody.code &&
+    academicSemesterTitlesAndCodesMapper[updateBody.title] !== updateBody.code
+  ) {
+    throw new ApiError(
+      status.BAD_REQUEST,
+      'Academic Semester title and code does not match'
+    );
+  }
+  const result = await AcademicSemester.findOneAndUpdate(
+    { _id: id },
+    updateBody,
+    {
+      new: true,
+    }
+  );
   if (!result) {
     throw new ApiError(status.NOT_FOUND, 'Academic Semester not found');
   }

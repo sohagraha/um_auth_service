@@ -70,3 +70,27 @@
   label: 'sr',
   timestamp: '2023-06-14T16:36:04.645Z'
 }
+{
+  message: 'Connected to database',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-14T16:37:19.318Z'
+}
+{
+  message: 'Server is running on port 5000',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-14T16:37:19.366Z'
+}
+{
+  message: 'Connected to database',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-14T16:40:14.046Z'
+}
+{
+  message: 'Server is running on port 5000',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-14T16:40:14.082Z'
+}
