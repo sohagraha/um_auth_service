@@ -142,3 +142,15 @@
   label: 'sr',
   timestamp: '2023-06-15T02:40:10.281Z'
 }
+{
+  message: 'Connected to database',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-15T02:40:20.421Z'
+}
+{
+  message: 'Server is running on port 5000',
+  level: 'info',
+  label: 'sr',
+  timestamp: '2023-06-15T02:40:20.467Z'
+}

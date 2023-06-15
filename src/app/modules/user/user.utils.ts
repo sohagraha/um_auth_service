@@ -19,7 +19,12 @@ export const generateUserId = async () => {
 };
 
 export const findLastStudentId = async () => {
-  const lastStudent = await User.findOne({}, { id: 1, _id: 0 })
+  const lastStudent = await User.findOne(
+    {
+      role: 'student',
+    },
+    { id: 1, _id: 0 }
+  )
     .sort({ createdAt: -1 })
     .lean();
   return lastStudent?.id ? lastStudent?.id.substring(4) : undefined;
@@ -38,10 +43,15 @@ export const generateStudentId = async (
 };
 
 export const findLastFacultyId = async (): Promise<string | undefined> => {
-  const lasFaculty = await User.findOne({}, { id: 1, _id: 0 })
+  const lasFaculty = await User.findOne(
+    {
+      role: 'faculty',
+    },
+    { id: 1, _id: 0 }
+  )
     .sort({ createdAt: -1 })
     .lean();
-  return lasFaculty?.id;
+  return lasFaculty?.id ? lasFaculty?.id.substring(1) : undefined;
 };
 
 export const generateFacultyId = async (): Promise<string> => {
@@ -53,10 +63,15 @@ export const generateFacultyId = async (): Promise<string> => {
 };
 
 export const findLastAdminId = async (): Promise<string | undefined> => {
-  const lasFaculty = await User.findOne({}, { id: 1, _id: 0 })
+  const lasFaculty = await User.findOne(
+    {
+      role: 'admin',
+    },
+    { id: 1, _id: 0 }
+  )
     .sort({ createdAt: -1 })
     .lean();
-  return lasFaculty?.id;
+  return lasFaculty?.id ? lasFaculty?.id.substring(1) : undefined;
 };
 
 export const generateAdminId = async (): Promise<string> => {
