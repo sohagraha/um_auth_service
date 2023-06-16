@@ -10,5 +10,10 @@ userRouter.post(
   validateRequest(UserValidation.createUserZodSchema),
   UserController.createUser
 );
+userRouter.post(
+  '/create-student',
+  validateRequest(UserValidation.createUserZodSchema),
+  UserController.createStudent
+);
 
 export const userRoutes = userRouter;
