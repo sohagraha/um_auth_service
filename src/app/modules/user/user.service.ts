@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
 import config from '../../../config';
 import ApiError from '../../../errors/ApiError';
 import { AcademicSemester } from '../academicSemester/academicSemester.model';
@@ -27,6 +28,13 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
   if (!user.password) {
     user.password = config.DEFAULT_STUDENT_PASSWORD as string;
   }
+
+  // hash password
+  const salt = await bcrypt.genSalt(
+    Number(config.BCRYPT_SALT_ROUNDS) as number
+  );
+  user.password = await bcrypt.hash(user.password, salt);
+
   const createUser = await User.create(user);
   if (!createUser) {
     throw new ApiError(500, 'User not created');
