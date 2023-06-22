@@ -5,15 +5,28 @@ import validateRequest from '../../middlewares/validateRequest';
 
 const userRouter = express.Router();
 
-userRouter.post(
-  '/create-user',
-  validateRequest(UserValidation.createUserZodSchema),
-  UserController.createUser
-);
+// userRouter.post(
+//   '/create-user',
+//   validateRequest(UserValidation.createUserZodSchema),
+//   UserController.createUser
+// );
+
 userRouter.post(
   '/create-student',
-  validateRequest(UserValidation.createUserZodSchema),
+  validateRequest(UserValidation.createStudentZodSchema),
   UserController.createStudent
+);
+
+userRouter.post(
+  '/create-faculty',
+  validateRequest(UserValidation.createFacultyZodSchema),
+  UserController.createFaculy
+);
+
+userRouter.post(
+  '/create-admin',
+  validateRequest(UserValidation.createAdminZodSchema),
+  UserController.createAdmin
 );
 
 export const userRoutes = userRouter;
