@@ -1,9 +1,16 @@
-import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
+import httpStatus from 'http-status';
+import mongoose from 'mongoose';
 import config from '../../../config';
 import ApiError from '../../../errors/ApiError';
+import { IAcademicSemester } from '../academicSemester/academicSemester.interface';
 import { AcademicSemester } from '../academicSemester/academicSemester.model';
+import { IAdmin } from '../admin/admin.interface';
+import { Admin } from '../admin/admin.model';
+import { IFaculty } from '../faculty/faculty.interface';
+import { Faculty } from '../faculty/faculty.model';
 import { IStudent } from '../student/student.interface';
+import { Student } from '../student/student.model';
 import { IUser } from './user.interface';
 import { User } from './user.model';
 import {
@@ -12,13 +19,6 @@ import {
   generateStudentId,
   generateUserId,
 } from './user.utils';
-import { IAcademicSemester } from '../academicSemester/academicSemester.interface';
-import { Student } from '../student/student.model';
-import httpStatus from 'http-status';
-import { IFaculty } from '../faculty/faculty.interface';
-import { Faculty } from '../faculty/faculty.model';
-import { IAdmin } from '../admin/admin.interface';
-import { Admin } from '../admin/admin.model';
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
   // AUTO GENERATED INCREMENTAL ID
@@ -50,6 +50,13 @@ const createStudent = async (
   if (!user.password) {
     user.password = config.DEFAULT_STUDENT_PASSWORD as string;
   }
+
+  // hash password
+  const salt = await bcrypt.genSalt(
+    Number(config.BCRYPT_SALT_ROUNDS) as number
+  );
+  user.password = await bcrypt.hash(user.password, salt);
+
   // set role
   user.role = 'student';
   const academicsemester = await AcademicSemester.findById(
@@ -121,6 +128,12 @@ const createFaculty = async (
     user.password = config.DEFAULT_FACULTY_PASSWORD as string;
   }
 
+  // hash password
+  const salt = await bcrypt.genSalt(
+    Number(config.BCRYPT_SALT_ROUNDS) as number
+  );
+  user.password = await bcrypt.hash(user.password, salt);
+
   // set role
   user.role = 'faculty';
 
@@ -181,6 +194,12 @@ const createAdmin = async (
   if (!user.password) {
     user.password = config.DEFAULT_ADMIN_PASSWORD as string;
   }
+
+  // hash password
+  const salt = await bcrypt.genSalt(
+    Number(config.BCRYPT_SALT_ROUNDS) as number
+  );
+  user.password = await bcrypt.hash(user.password, salt);
 
   // set role
   user.role = 'admin';
