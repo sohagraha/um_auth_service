@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt';
 import httpStatus from 'http-status';
 import mongoose from 'mongoose';
 import config from '../../../config';
@@ -29,12 +28,6 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
     user.password = config.DEFAULT_STUDENT_PASSWORD as string;
   }
 
-  // hash password
-  const salt = await bcrypt.genSalt(
-    Number(config.BCRYPT_SALT_ROUNDS) as number
-  );
-  user.password = await bcrypt.hash(user.password, salt);
-
   const createUser = await User.create(user);
   if (!createUser) {
     throw new ApiError(500, 'User not created');
@@ -50,12 +43,6 @@ const createStudent = async (
   if (!user.password) {
     user.password = config.DEFAULT_STUDENT_PASSWORD as string;
   }
-
-  // hash password
-  const salt = await bcrypt.genSalt(
-    Number(config.BCRYPT_SALT_ROUNDS) as number
-  );
-  user.password = await bcrypt.hash(user.password, salt);
 
   // set role
   user.role = 'student';
@@ -128,12 +115,6 @@ const createFaculty = async (
     user.password = config.DEFAULT_FACULTY_PASSWORD as string;
   }
 
-  // hash password
-  const salt = await bcrypt.genSalt(
-    Number(config.BCRYPT_SALT_ROUNDS) as number
-  );
-  user.password = await bcrypt.hash(user.password, salt);
-
   // set role
   user.role = 'faculty';
 
@@ -194,12 +175,6 @@ const createAdmin = async (
   if (!user.password) {
     user.password = config.DEFAULT_ADMIN_PASSWORD as string;
   }
-
-  // hash password
-  const salt = await bcrypt.genSalt(
-    Number(config.BCRYPT_SALT_ROUNDS) as number
-  );
-  user.password = await bcrypt.hash(user.password, salt);
 
   // set role
   user.role = 'admin';
