@@ -4,11 +4,11 @@ import { IUser, UserModel } from './user.interface';
 import bcrypt from 'bcrypt';
 import config from '../../../config';
 
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema<IUser, UserModel>(
   {
     id: { type: String, required: true, unique: true },
     role: { type: String, required: true },
-    password: { type: String, required: true },
+    password: { type: String, required: true, select: 0 },
     student: {
       type: Schema.Types.ObjectId,
       ref: 'Student',
@@ -24,6 +24,7 @@ const userSchema = new Schema<IUser>(
       ref: 'Admin',
       required: false,
     },
+    needsPasswordChange: { type: Boolean, default: true },
   },
   {
     timestamps: true,
@@ -32,6 +33,25 @@ const userSchema = new Schema<IUser>(
     },
   }
 );
+
+userSchema.statics.isUserExist = async function (
+  id: string
+): Promise<Pick<
+  IUser,
+  'id' | 'password' | 'role' | 'needsPasswordChange'
+> | null> {
+  return await User.findOne(
+    { id },
+    { id: 1, password: 1, role: 1, needsPasswordChange: 1 }
+  );
+};
+
+userSchema.statics.isPasswordMatched = async function (
+  givenPassword: string,
+  savedPassword: string
+): Promise<boolean> {
+  return await bcrypt.compare(givenPassword, savedPassword);
+};
 
 // USER CREATE AND USER SAVE  -> User.create() and User.save()
 

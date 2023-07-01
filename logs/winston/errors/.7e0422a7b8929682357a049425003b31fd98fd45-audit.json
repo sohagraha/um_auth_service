@@ -6,16 +6,6 @@
     "auditLog": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\.7e0422a7b8929682357a049425003b31fd98fd45-audit.json",
     "files": [
         {
-            "date": 1686973229103,
-            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-17-09-error.log",
-            "hash": "0cb582e3218a4cbce1e488e2f15448ad343b636d69b8cbccaee36d6e17b9b9b4"
-        },
-        {
-            "date": 1686995653303,
-            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-17-15-error.log",
-            "hash": "b4dcd6a74b8dbf2dcbd55082f6ee646253c7977e742fdfd497980cc4ba1dac40"
-        },
-        {
             "date": 1687449091278,
             "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-22-21-error.log",
             "hash": "9cea9a3de3c61672a94219fc144dd09a4283c6a3be0a540d552fe3b4f1cb8a11"
@@ -34,6 +24,21 @@
             "date": 1688173310150,
             "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-07-error.log",
             "hash": "accadeb2c8c1cfc0a05f311aaa612d2332e1f10a61f2d2bb9abf04c25d70d952"
+        },
+        {
+            "date": 1688181558407,
+            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-09-error.log",
+            "hash": "875f4979816ce24093c9847c1eb348b508f2b4415cfe4ac1b9734b8043662662"
+        },
+        {
+            "date": 1688184145379,
+            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-10-error.log",
+            "hash": "1f6b386a8ed48d193c1a58ea4a4f408590bea6570516cd1a215fb06a4d573ef8"
+        },
+        {
+            "date": 1688206835817,
+            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-16-error.log",
+            "hash": "965268c3cd148fd61c4b1cd296da784a00c5ac53129bec06ec87614f92e4ac26"
         }
     ],
     "hashType": "sha256"

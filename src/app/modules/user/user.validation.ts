@@ -40,13 +40,13 @@ const createStudentZodSchema = z.object({
         required_error: 'Permanent address is required',
       }),
       academicSemester: z.string({
-        required_error: 'Academic semester is required',
+        required_error: 'Academic semester is required', // refernece to academic semester
       }),
       academicDepartment: z.string({
-        required_error: 'Academic department is required',
+        required_error: 'Academic department is required', // refernece to academic department
       }),
       academicFaculty: z.string({
-        required_error: 'Academic faculty is required',
+        required_error: 'Academic faculty is required', // refernece to academic faculty
       }),
       guardian: z.object({
         fatherName: z.string({
