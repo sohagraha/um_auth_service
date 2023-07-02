@@ -1,12 +1,14 @@
-import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
+import express, { Application, NextFunction, Request, Response } from 'express';
 // import ApiError from './errors/ApiError'
+import cookieParser from 'cookie-parser';
+import httpStatus from 'http-status';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routes from './app/routes';
 const app: Application = express();
-import httpStatus from 'http-status';
 
 app.use(cors());
+app.use(cookieParser());
 
 app.use(express.json());
 

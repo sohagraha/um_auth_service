@@ -42,6 +42,8 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
 
   res.cookie('refreshToken', refreshToken, cookieOptions);
 
+  // delete result.refreshToken; // delete refresh token from response
+
   sendResponse<IRefreshTokenResponse>(res, {
     statusCode: 200,
     success: true,
