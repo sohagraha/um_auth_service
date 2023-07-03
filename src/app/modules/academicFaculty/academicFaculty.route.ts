@@ -16,26 +16,40 @@ router.post(
 
 router.get(
   '/:id',
-  auth(ENUM_USER_ROLES.ADMIN, ENUM_USER_ROLES.FACULTY, ENUM_USER_ROLES.STUDENT),
+  auth(
+    ENUM_USER_ROLES.SUPER_ADMIN,
+    ENUM_USER_ROLES.ADMIN,
+    ENUM_USER_ROLES.FACULTY,
+    ENUM_USER_ROLES.STUDENT
+  ),
   AcademicFacultyController.getSingleFaculty
 );
 
 router.patch(
   '/:id',
   validateRequest(AcademicFacultyValidation.updatefacultyZodSchema),
-  auth(ENUM_USER_ROLES.ADMIN, ENUM_USER_ROLES.FACULTY),
+  auth(
+    ENUM_USER_ROLES.SUPER_ADMIN,
+    ENUM_USER_ROLES.ADMIN,
+    ENUM_USER_ROLES.FACULTY
+  ),
   AcademicFacultyController.updateFaculty
 );
 
 router.delete(
   '/:id',
-  auth(ENUM_USER_ROLES.ADMIN),
+  auth(ENUM_USER_ROLES.SUPER_ADMIN, ENUM_USER_ROLES.ADMIN),
   AcademicFacultyController.deleteFaculty
 );
 
 router.get(
   '/',
-  auth(ENUM_USER_ROLES.ADMIN, ENUM_USER_ROLES.FACULTY, ENUM_USER_ROLES.STUDENT),
+  auth(
+    ENUM_USER_ROLES.SUPER_ADMIN,
+    ENUM_USER_ROLES.ADMIN,
+    ENUM_USER_ROLES.FACULTY,
+    ENUM_USER_ROLES.STUDENT
+  ),
   AcademicFacultyController.getAllFaculties
 );
 
