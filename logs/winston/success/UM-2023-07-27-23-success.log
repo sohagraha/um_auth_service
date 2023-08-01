@@ -2,59 +2,47 @@
   message: 'Connected to database',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:49:17.104Z'
+  timestamp: '2023-07-27T17:13:21.617Z'
 }
 {
   message: 'Server is running on port 5000',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:49:17.171Z'
+  timestamp: '2023-07-27T17:13:21.695Z'
 }
 {
   message: 'Connected to database',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:50:18.786Z'
+  timestamp: '2023-07-27T17:15:25.411Z'
 }
 {
   message: 'Server is running on port 5000',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:50:18.874Z'
+  timestamp: '2023-07-27T17:15:25.469Z'
 }
 {
   message: 'Connected to database',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:50:25.981Z'
+  timestamp: '2023-07-27T17:18:01.269Z'
 }
 {
   message: 'Server is running on port 5000',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:50:26.075Z'
+  timestamp: '2023-07-27T17:18:01.343Z'
 }
 {
   message: 'Connected to database',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:58:40.698Z'
+  timestamp: '2023-07-27T17:20:25.479Z'
 }
 {
   message: 'Server is running on port 5000',
   level: 'info',
   label: 'sr',
-  timestamp: '2023-06-22T16:58:40.744Z'
-}
-{
-  message: 'Connected to database',
-  level: 'info',
-  label: 'sr',
-  timestamp: '2023-06-22T16:59:47.528Z'
-}
-{
-  message: 'Server is running on port 5000',
-  level: 'info',
-  label: 'sr',
-  timestamp: '2023-06-22T16:59:47.626Z'
+  timestamp: '2023-07-27T17:20:25.548Z'
 }

@@ -1,55 +1,15 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\.7e0422a7b8929682357a049425003b31fd98fd45-audit.json",
-  "files": [
-    {
-      "date": 1687449091278,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-22-21-error.log",
-      "hash": "9cea9a3de3c61672a94219fc144dd09a4283c6a3be0a540d552fe3b4f1cb8a11"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1687452553697,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-22-22-error.log",
-      "hash": "693b71b7abe4d5a78eab592a53e2e8092e316abd718e3cfdc65d4d1805313936"
-    },
-    {
-      "date": 1687453205037,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-06-22-23-error.log",
-      "hash": "36720f32dcb0640d0b1a81248ffe22a3e84ea6385b05f7ab45f2d35a48ba6ce7"
-    },
-    {
-      "date": 1688173310150,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-07-error.log",
-      "hash": "accadeb2c8c1cfc0a05f311aaa612d2332e1f10a61f2d2bb9abf04c25d70d952"
-    },
-    {
-      "date": 1688181558407,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-09-error.log",
-      "hash": "875f4979816ce24093c9847c1eb348b508f2b4415cfe4ac1b9734b8043662662"
-    },
-    {
-      "date": 1688184145379,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-10-error.log",
-      "hash": "1f6b386a8ed48d193c1a58ea4a4f408590bea6570516cd1a215fb06a4d573ef8"
-    },
-    {
-      "date": 1688206835817,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-01-16-error.log",
-      "hash": "965268c3cd148fd61c4b1cd296da784a00c5ac53129bec06ec87614f92e4ac26"
-    },
-    {
-      "date": 1688318978930,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-02-23-error.log",
-      "hash": "1d95d84833f9548815562559983cd7d206bd1fd062e5362add941957092e06e3"
-    },
-    {
-      "date": 1688322353032,
-      "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-03-00-error.log",
-      "hash": "16761346db659f002d99b9b5f73b41ce599c823e2bfc5c39fe1a43cb001ac2b4"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\.7e0422a7b8929682357a049425003b31fd98fd45-audit.json",
+    "files": [
+        {
+            "date": 1690477974370,
+            "name": "C:\\Users\\Sohag Raha\\Desktop\\Apollo\\UM\\logs\\winston\\errors\\UM-2023-07-27-23-error.log",
+            "hash": "a118f40967cdd901ac18881656f32c758f0a867eda618c1d7a235c824c747768"
+        }
+    ],
+    "hashType": "sha256"
 }

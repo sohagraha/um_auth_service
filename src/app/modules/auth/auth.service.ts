@@ -85,7 +85,14 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
   };
 };
 
+// const changePassword = async (
+//   payload: { oldPassword: string; newPassword: string },
+//   user: User
+// ) => {
+//   const { oldPassword, newPassword } = payload;
+
 export const AuthService = {
   loginUser,
   refreshToken,
+  // changePassword
 };
