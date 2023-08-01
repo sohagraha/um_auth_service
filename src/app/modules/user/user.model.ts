@@ -25,6 +25,7 @@ const userSchema = new Schema<IUser, UserModel>(
       required: false,
     },
     needsPasswordChange: { type: Boolean, default: true },
+    passwordChangedAt: { type: Date, default: Date.now() },
   },
   {
     timestamps: true,

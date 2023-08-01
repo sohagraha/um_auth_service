@@ -12,6 +12,7 @@ export type IUser = {
   student?: Types.ObjectId | IStudent;
   faculty?: Types.ObjectId | IFaculty;
   admin?: Types.ObjectId | IAdmin;
+  passwordChangedAt?: Date;
 };
 
 // export type IUserMethods = {

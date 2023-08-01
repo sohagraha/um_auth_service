@@ -19,3 +19,8 @@ export type IVerifiedLoginUser = {
   userId: string;
   role: ENUM_USER_ROLES;
 };
+
+export type IchangePassword = {
+  oldPassword: string;
+  newPassword: string;
+};

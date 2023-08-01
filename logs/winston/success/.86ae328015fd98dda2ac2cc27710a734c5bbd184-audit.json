@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\Personal\\Next Lavel\\um_auth_service\\logs\\winston\\success\\.86ae328015fd98dda2ac2cc27710a734c5bbd184-audit.json",
+    "files": [
+        {
+            "date": 1690891658024,
+            "name": "E:\\Personal\\Next Lavel\\um_auth_service\\logs\\winston\\success\\UM-2023-08-01-18-success.log",
+            "hash": "02dd2a03e07e8a2331418bfd2782bc41f7ea56b569755ad6f403a98b5796c8e1"
+        },
+        {
+            "date": 1690897209994,
+            "name": "E:\\Personal\\Next Lavel\\um_auth_service\\logs\\winston\\success\\UM-2023-08-01-19-success.log",
+            "hash": "46c26b16ae6d0a122b647bcb0e2d24e8355ffe54cd7bb83a251d1d249068f652"
+        },
+        {
+            "date": 1690900633418,
+            "name": "E:\\Personal\\Next Lavel\\um_auth_service\\logs\\winston\\success\\UM-2023-08-01-20-success.log",
+            "hash": "45a5b7b63ab42825a41bb885d8c3eeb6f606d3651027d314bf887244acbb84bc"
+        }
+    ],
+    "hashType": "sha256"
+}
