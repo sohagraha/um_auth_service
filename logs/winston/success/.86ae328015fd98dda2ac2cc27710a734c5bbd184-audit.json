@@ -19,6 +19,11 @@
             "date": 1690900633418,
             "name": "E:\\Personal\\Next Lavel\\um_auth_service\\logs\\winston\\success\\UM-2023-08-01-20-success.log",
             "hash": "45a5b7b63ab42825a41bb885d8c3eeb6f606d3651027d314bf887244acbb84bc"
+        },
+        {
+            "date": 1690906341687,
+            "name": "E:\\Personal\\Next Lavel\\um_auth_service\\logs\\winston\\success\\UM-2023-08-01-22-success.log",
+            "hash": "ae67d713344a22e64ac6250331f7379106fcb4cfbaea8c5efbfcb26fd169487e"
         }
     ],
     "hashType": "sha256"

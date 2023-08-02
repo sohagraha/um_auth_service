@@ -64,6 +64,11 @@ userSchema.pre('save', async function (next) {
     user.password,
     Number(config.BCRYPT_SALT_ROUNDS)
   );
+
+  if (!user?.needsPasswordChange) {
+    user.passwordChangedAt = new Date();
+  }
+
   next();
 });
 
